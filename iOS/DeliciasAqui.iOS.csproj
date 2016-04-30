@@ -90,8 +90,8 @@
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\LancamentoContaCorrente.xib" />
     <InterfaceDefinition Include="ViewControllers\ContaCorrente\ContaCorrenteViewController.xib" />
+    <InterfaceDefinition Include="LancamentoContaCorrente.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -113,6 +113,7 @@
     <Compile Include="ViewControllers\ContaCorrente\ContaCorrenteViewController.designer.cs">
       <DependentUpon>ContaCorrenteViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIColorExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

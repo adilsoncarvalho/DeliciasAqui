@@ -13,13 +13,22 @@ namespace DeliciasAqui.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			// Perform any additional setup after loading the view, typically from a nib.
+			this.View.Opaque = false;
+			this.View.BackgroundColor = UIColor.FromRGBA (0, 0, 0, 0.3f);
+
+			btnConfirma.Layer.CornerRadius = 7f;
+			btnCancela.Layer.CornerRadius = 7f;
+		
 		}
 
 		public override void DidReceiveMemoryWarning ()
 		{
 			base.DidReceiveMemoryWarning ();
 			// Release any cached data, images, etc that aren't in use.
+		}
+
+		partial void Cancelar (Foundation.NSObject sender) {
+			DismissViewController(true, null);
 		}
 	}
 }

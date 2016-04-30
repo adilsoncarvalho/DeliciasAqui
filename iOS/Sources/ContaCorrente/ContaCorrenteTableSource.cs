@@ -1,11 +1,13 @@
 ﻿using System;
 using UIKit;
 using System.Collections.Generic;
+using Foundation;
 
-namespace DeliciasAqui
+namespace DeliciasAqui.iOS
 {
 	public class ContaCorrenteTableSource : UITableViewSource
 	{
+		private UIViewController viewController;
 		List<ContaCorrente> tableItems;
 		string cellIdentifier = "ContaCorrenteTableCell";
 
@@ -35,8 +37,12 @@ namespace DeliciasAqui
 
 		public override void RowSelected (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
-			new UIAlertView("Alert","Selected Cell", null, "OK" ,null).Show ();
-			tableView.DeselectRow (indexPath, true);
+			UIWindow window = UIApplication.SharedApplication.KeyWindow;
+			UIViewController viewController = window.RootViewController;
+//			viewController.View.BackgroundColor = UIColor.FromRGBA (0, 0, 0, 0.3f);
+//			viewController.View.Opaque = true;
+			viewController.ModalPresentationStyle = UIModalPresentationStyle.CurrentContext;
+			viewController.PresentViewController (new LancamentoContaCorrente(), true, null);
 		}
 	}
 }

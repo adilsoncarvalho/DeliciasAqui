@@ -19,6 +19,8 @@ namespace DeliciasAqui.iOS
 		{
 			Window = new UIWindow (UIScreen.MainScreen.Bounds);
 			Window.RootViewController = new ContaCorrenteViewController ();      
+//			Window.RootViewController = new LancamentoContaCorrente ();      
+
 			Window.MakeKeyAndVisible ();
 			return true;
 		}
