@@ -11,8 +11,8 @@ using UIKit;
 
 namespace DeliciasAqui.iOS
 {
-	[Register ("ContaCorrenteViewController")]
-	partial class ContaCorrenteViewController
+	[Register ("LancamentoContaCorrente")]
+	partial class LancamentoContaCorrente
 	{
 		void ReleaseDesignerOutlets ()
 		{

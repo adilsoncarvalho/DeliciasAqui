@@ -90,7 +90,8 @@
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="ViewControllers\ContaCorrenteViewController.xib" />
+    <InterfaceDefinition Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\LancamentoContaCorrente.xib" />
+    <InterfaceDefinition Include="ViewControllers\ContaCorrente\ContaCorrenteViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -104,8 +105,12 @@
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Sources\ContaCorrente\ContaCorrenteTableSource.cs" />
-    <Compile Include="ViewControllers\ContaCorrenteViewController.cs" />
-    <Compile Include="ViewControllers\ContaCorrenteViewController.designer.cs">
+    <Compile Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\LancamentoContaCorrente.cs" />
+    <Compile Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\LancamentoContaCorrente.designer.cs">
+      <DependentUpon>LancamentoContaCorrente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContaCorrente\ContaCorrenteViewController.cs" />
+    <Compile Include="ViewControllers\ContaCorrente\ContaCorrenteViewController.designer.cs">
       <DependentUpon>ContaCorrenteViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -114,5 +119,6 @@
     <Folder Include="Sources\" />
     <Folder Include="Sources\ContaCorrente\" />
     <Folder Include="ViewControllers\" />
+    <Folder Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\" />
   </ItemGroup>
 </Project>
