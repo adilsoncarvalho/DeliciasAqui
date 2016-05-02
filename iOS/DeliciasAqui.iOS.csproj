@@ -91,7 +91,7 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="ViewControllers\ContaCorrente\ContaCorrenteViewController.xib" />
-    <InterfaceDefinition Include="LancamentoContaCorrente.xib" />
+    <InterfaceDefinition Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\LancamentoContaCorrente.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -114,8 +114,8 @@
       <DependentUpon>ContaCorrenteViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="UIColorExtensions.cs" />
-    <Compile Include="Sources\Products\ProductsSourcePickerView.cs" />
     <Compile Include="Sources\Products\ProductsPickerChangedEventArgs.cs" />
+    <Compile Include="Sources\Products\ProductsModelPickerView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

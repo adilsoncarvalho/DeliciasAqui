@@ -7,7 +7,6 @@ namespace DeliciasAqui.iOS
 {
 	public class ContaCorrenteTableSource : UITableViewSource
 	{
-		private UIViewController viewController;
 		List<ContaCorrente> tableItems;
 		string cellIdentifier = "ContaCorrenteTableCell";
 

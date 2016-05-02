@@ -7,6 +7,7 @@ namespace DeliciasAqui.iOS
 {
 	public partial class LancamentoContaCorrente : UIViewController
 	{
+		private string selectedProduct;
 		private readonly IList<string> products = new List<string>
 		{
 			"Empadinha Salgada",
@@ -28,49 +29,58 @@ namespace DeliciasAqui.iOS
 			btnConfirma.Layer.CornerRadius = 7f;
 			btnCancela.Layer.CornerRadius = 7f;
 
+			this.SetupPicker();
+			this.SetupDatePicker();
+		}
+
+		private void SetupDatePicker()
+		{
 			var datePicker = new UIDatePicker () {
 				Mode = UIDatePickerMode.Date,
 			};
 
-			tfData.InputView = datePicker;
-			this.SetupPicker();
-		}
-
-		private void SetupPicker()
-		{
-//			// Setup the picker and model
-//			PickerModel model = new PickerModel(this.colors);
-//			model.PickerChanged += (sender, e) => {
-//				this.selectedColor = e.SelectedValue;
-//			};
-
-
-			UIPickerView picker = new UIPickerView();
-			picker.ShowSelectionIndicator = true;
-//			picker.Model = model;
-
-			// Setup the toolbar
 			UIToolbar toolbar = new UIToolbar();
 			toolbar.BarStyle = UIBarStyle.Black;
 			toolbar.Translucent = true;
 			toolbar.SizeToFit();
 
-			// Create a 'done' button for the toolbar and add it to the toolbar
 			UIBarButtonItem doneButton = new UIBarButtonItem("Done", UIBarButtonItemStyle.Done,
 				(s, e) => {
-//					this.ColorTextField.Text = selectedColor;
-//					this.ColorTextField.ResignFirstResponder();
+					this.tfData.Text = selectedProduct;
+					this.tfData.ResignFirstResponder();
 				});
 			toolbar.SetItems(new UIBarButtonItem[]{doneButton}, true);
 
-			// Tell the textbox to use the picker for input
-//			this.ColorTextField.InputView = picker;
-
-			// Display the toolbar over the pickers
-//			this.ColorTextField.InputAccessoryView = toolbar;
+			tfData.InputView = datePicker;
+			this.tfData.InputAccessoryView = toolbar;
 		}
 
+		private void SetupPicker()
+		{
+			ProductsModelPickerView model = new ProductsModelPickerView(this.products);
+			model.PickerChanged += (sender, e) => {
+				this.selectedProduct = e.SelectedValue;
+			};
 
+			UIPickerView picker = new UIPickerView();
+			picker.ShowSelectionIndicator = true;
+			picker.Model = model;
+
+			UIToolbar toolbar = new UIToolbar();
+			toolbar.BarStyle = UIBarStyle.Black;
+			toolbar.Translucent = true;
+			toolbar.SizeToFit();
+
+			UIBarButtonItem doneButton = new UIBarButtonItem("Done", UIBarButtonItemStyle.Done,
+				(s, e) => {
+					this.tfProduto.Text = selectedProduct;
+					this.tfProduto.ResignFirstResponder();
+				});
+
+			toolbar.SetItems(new UIBarButtonItem[]{doneButton}, true);
+			this.tfProduto.InputView = picker;
+			this.tfProduto.InputAccessoryView = toolbar;
+		}
 
 		public override void DidReceiveMemoryWarning ()
 		{
