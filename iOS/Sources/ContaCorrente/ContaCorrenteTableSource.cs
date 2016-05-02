@@ -39,10 +39,13 @@ namespace DeliciasAqui.iOS
 		{
 			UIWindow window = UIApplication.SharedApplication.KeyWindow;
 			UIViewController viewController = window.RootViewController;
-//			viewController.View.BackgroundColor = UIColor.FromRGBA (0, 0, 0, 0.3f);
-//			viewController.View.Opaque = true;
-			viewController.ModalPresentationStyle = UIModalPresentationStyle.CurrentContext;
-			viewController.PresentViewController (new LancamentoContaCorrente(), true, null);
+
+			var lancamentoContaCorrenteViewController = new LancamentoContaCorrente () {
+				ModalPresentationStyle = UIModalPresentationStyle.OverCurrentContext,
+				ModalTransitionStyle = UIModalTransitionStyle.CoverVertical
+			};
+
+			viewController.PresentViewController (lancamentoContaCorrenteViewController, true, null);
 		}
 	}
 }

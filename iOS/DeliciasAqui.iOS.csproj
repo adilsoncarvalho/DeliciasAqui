@@ -114,6 +114,8 @@
       <DependentUpon>ContaCorrenteViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="UIColorExtensions.cs" />
+    <Compile Include="Sources\Products\ProductsSourcePickerView.cs" />
+    <Compile Include="Sources\Products\ProductsPickerChangedEventArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -121,5 +123,6 @@
     <Folder Include="Sources\ContaCorrente\" />
     <Folder Include="ViewControllers\" />
     <Folder Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\" />
+    <Folder Include="Sources\Products\" />
   </ItemGroup>
 </Project>
