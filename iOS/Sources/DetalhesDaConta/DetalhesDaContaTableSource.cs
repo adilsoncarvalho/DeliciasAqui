@@ -3,14 +3,15 @@ using UIKit;
 using System.Collections.Generic;
 using Foundation;
 
+
 namespace DeliciasAqui.iOS
 {
-	public class ContaCorrenteTableSource : UITableViewSource
+	public class DetalhesDaContaTableSource: UITableViewSource
 	{
-		List<ContaCorrente> tableItems;
-		string cellIdentifier = "ContaCorrenteTableCell";
+		List<DetalhesDaConta> tableItems;
+		string cellIdentifier = "DetalhesDaContaTableCell";
 
-		public ContaCorrenteTableSource (List<ContaCorrente> items)
+		public DetalhesDaContaTableSource (List<DetalhesDaConta> items)
 		{
 			tableItems = items;
 		}
@@ -27,8 +28,14 @@ namespace DeliciasAqui.iOS
 			if (cell == null)
 				cell = new UITableViewCell (UITableViewCellStyle.Subtitle, cellIdentifier);
 
-			cell.TextLabel.Text = tableItems [indexPath.Row].titular.name;
-			cell.DetailTextLabel.Text = tableItems [indexPath.Row].saldo.ToString();
+			cell.TextLabel.Text = tableItems [indexPath.Row].produto.descricao;
+			string qtd = tableItems [indexPath.Row].quantidade.ToString ();
+			string vlrUnitario = tableItems [indexPath.Row].valorUnitario.ToString();
+			string vlrTotal = tableItems [indexPath.Row].valorTotal.ToString();
+
+			string sub = String.Concat ("Qtd: ", qtd, " X ", vlrUnitario, " = ", vlrTotal);
+
+			cell.DetailTextLabel.Text = sub;
 
 			cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			return cell;
@@ -51,7 +58,7 @@ namespace DeliciasAqui.iOS
 		{
 			switch (editingStyle) {
 			case UITableViewCellEditingStyle.Delete:
-				
+				// ToDo Apagar Item
 				break;
 			case UITableViewCellEditingStyle.None:
 				Console.WriteLine ("CommitEditingStyle:None called");
@@ -64,7 +71,7 @@ namespace DeliciasAqui.iOS
 		}
 		public override string TitleForDeleteConfirmation (UITableView tableView, NSIndexPath indexPath)
 		{   // Optional - default text is 'Delete'
-			return "Detalhes";
+			return "Apagar Lançamento";
 		}
 	}
 }

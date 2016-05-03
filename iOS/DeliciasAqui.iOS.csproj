@@ -116,6 +116,7 @@
     <Compile Include="UIColorExtensions.cs" />
     <Compile Include="Sources\Products\ProductsPickerChangedEventArgs.cs" />
     <Compile Include="Sources\Products\ProductsModelPickerView.cs" />
+    <Compile Include="Sources\DetalhesDaConta\DetalhesDaContaTableSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -124,5 +125,7 @@
     <Folder Include="ViewControllers\" />
     <Folder Include="ViewControllers\ContaCorrente\LancamentoContaCorrente\" />
     <Folder Include="Sources\Products\" />
+    <Folder Include="Librarys\" />
+    <Folder Include="Sources\DetalhesDaConta\" />
   </ItemGroup>
 </Project>

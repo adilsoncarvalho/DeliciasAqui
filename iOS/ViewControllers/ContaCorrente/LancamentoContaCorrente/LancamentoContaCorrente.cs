@@ -33,26 +33,32 @@ namespace DeliciasAqui.iOS
 			this.SetupDatePicker();
 		}
 
-		private void SetupDatePicker()
+		private void SetupDatePicker ()
 		{
-			var datePicker = new UIDatePicker () {
-				Mode = UIDatePickerMode.Date,
-			};
-
-			UIToolbar toolbar = new UIToolbar();
-			toolbar.BarStyle = UIBarStyle.Black;
-			toolbar.Translucent = true;
-			toolbar.SizeToFit();
-
-			UIBarButtonItem doneButton = new UIBarButtonItem("Done", UIBarButtonItemStyle.Done,
-				(s, e) => {
-					this.tfData.Text = selectedProduct;
-					this.tfData.ResignFirstResponder();
-				});
-			toolbar.SetItems(new UIBarButtonItem[]{doneButton}, true);
-
-			tfData.InputView = datePicker;
-			this.tfData.InputAccessoryView = toolbar;
+//			EventHandler<PickerChangedEventArgs> PickerChanged;
+//			UIDatePicker datePicker = new UIDatePicker();
+//			datePicker.PickerChanged += (sender, e) => {
+//				this.tfData = e.SelectedValue;
+//			};
+//
+//			//Setup the toolbar
+//			UIToolbar toolbar = new UIToolbar();
+//			toolbar.BarStyle = UIBarStyle.Black;
+//			toolbar.Translucent = true;
+//			toolbar.SizeToFit();
+//
+//			//Create a done button for the toolbar and add it
+//			UIBarButtonItem doneButton = new UIBarButtonItem("Done", UIBarButtonItemStyle.Done, (s, e) => {
+//				this.tfData.Text = selectedDate;
+//				this.tfData.ResignFirstResponder();
+//			});
+//			toolbar.SetItems(new UIBarButtonItem[]{doneButton}, true);
+//
+//			//Tell the textbox to use the picker for input
+//			this.tfData.InputView = datePicker;
+//
+//			//Display the toolbar over the pickers
+//			this.tfData.InputAccessoryView = toolbar;
 		}
 
 		private void SetupPicker()

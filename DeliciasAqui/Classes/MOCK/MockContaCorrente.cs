@@ -8,6 +8,12 @@ namespace DeliciasAqui
 		{
 		}
 
+
+		/* O que eu penso sobre a API.
+  			Se na chamada eu passar um Uid de cliente me devolve apenas os lancamentos deste cliente.
+  			Se eu nao passar nada me devolve os Clientes e seus lancamentos. 
+  			*/
+
 		public ContaCorrente MocaConta(int codigo)
 		{
 

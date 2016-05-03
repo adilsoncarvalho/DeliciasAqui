@@ -6,6 +6,7 @@ namespace DeliciasAqui
 	{
 		public double saldo { get; private set;}
 		public Cliente titular { get; set; }
+		public DetalhesDaConta detalhesDaConta { get; set; }
 
 		public ContaCorrente ()
 		{

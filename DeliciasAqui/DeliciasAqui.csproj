@@ -35,9 +35,14 @@
     <Compile Include="Classes\Cliente\Cliente.cs" />
     <Compile Include="Classes\ContaCorrente\ContaCorrente.cs" />
     <Compile Include="Classes\MOCK\MockContaCorrente.cs" />
+    <Compile Include="Classes\MOCK\MockDetalhesDaConta.cs" />
+    <Compile Include="Classes\DetalhesDosLancamentos\DetalhesDaConta.cs" />
+    <Compile Include="Classes\Produto\Produto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Classes\" />
+    <Folder Include="Classes\DetalhesDosLancamentos\" />
+    <Folder Include="Classes\Produto\" />
   </ItemGroup>
 </Project>
